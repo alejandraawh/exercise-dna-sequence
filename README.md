@@ -46,7 +46,7 @@ Follow these steps to install and run the project on your local machine:
    ```bash
    git clone https://github.com/alejandraawh/exercise-dna-sequence.git
    
-   cd DnaSquence
+   cd exercise-dna-sequence
 
 ## Technologies
 
@@ -102,7 +102,7 @@ The input DNA sequence is validated to check if it matches the pattern for eithe
 If the DNA sequence is already stored in the database (i.e., it is a duplicate), the API will return a conflict error.
 Error Response (Duplicate Entry): If the input DNA sequence already exists in the database, a 409 CONFLICT status is returned with a message indicating the duplication:
 
-- **Example**:
+- **Example 409 - Duplicate Entry**:
     ```json
     {
     "timestamp": "2024-11-12T05:57:09.274763633",
@@ -111,7 +111,15 @@ Error Response (Duplicate Entry): If the input DNA sequence already exists in th
     "message": "Duplicate entry '[ATGCGA, CAGTGC, TCCTGT, AGCAGG, CCCCTA, TCACTG]' for key 'record_dna.UKri970613sb67uachjqu4tfgml'",
     "path": "uri=/api/v1/mutant"
 }
-
+- **Example 409 - Sequence Invalid**:
+    ```json
+   {
+    "timestamp": "2024-11-12T06:48:02.743873260",
+    "status": "409",
+    "error": "CONFLICT",
+    "message": "DNA sequence invalid. character not allowed: X",
+    "path": "uri=/api/v1/mutant"
+}
 ## Contributions
 
 We welcome contributions from the community! To contribute to this project, please follow these steps:
